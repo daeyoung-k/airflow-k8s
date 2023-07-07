@@ -1,0 +1,11 @@
+/venv
+
+.vscode/
+.idea
+*.tmp
+
+__pycache__
+*.pyc
+
+# M1 mac
+.DS_Store
