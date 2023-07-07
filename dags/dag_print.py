@@ -8,13 +8,14 @@ kst = pendulum.timezone("Asia/Seoul")
 
 default_args = {
     'owner': 'kane',
-    'retries': 1,
+    'email': ['airflow@airflow.com'],
+    'email_on_failure': False,
 }
 # 한국 시간 2021년 1월 1일 시작, 오전 8시마다 실행되는 DAG 설정
 dag = DAG(
     dag_id="print",
     default_args=default_args,
-    start_date=datetime(2021, 1, 1, tzinfo=kst),
+    start_date=datetime(2023, 7, 7, tzinfo=kst),
     schedule_interval="*/5 * * * *",
 )
 
