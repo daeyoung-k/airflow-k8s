@@ -7,12 +7,12 @@ from airflow.operators.python_operator import PythonOperator
 kst = pendulum.timezone("Asia/Seoul")
 
 default_args = {
-    'owner': 'Hello World',
+    'owner': 'kane',
     'retries': 1,
 }
 # 한국 시간 2021년 1월 1일 시작, 오전 8시마다 실행되는 DAG 설정
 dag = DAG(
-    dag_id="test_dag",
+    dag_id="print",
     default_args=default_args,
     start_date=datetime(2021, 1, 1, tzinfo=kst),
     schedule_interval="*/5 * * * *",
@@ -20,12 +20,12 @@ dag = DAG(
 
 
 def print_hello():
-    print('hello world')
+    print('쿠버네티스 airflow')
 
 
-t2 = PythonOperator(
-        task_id='Hello_World',
+t1 = PythonOperator(
+        task_id='print',
         python_callable=print_hello
     )
 
-t2
+t1
