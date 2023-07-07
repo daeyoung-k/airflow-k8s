@@ -26,7 +26,8 @@ def print_hello():
 
 t1 = PythonOperator(
         task_id='print',
-        python_callable=print_hello
+        python_callable=print_hello,
+        dag=dag
     )
 
 t1
