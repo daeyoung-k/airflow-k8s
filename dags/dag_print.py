@@ -22,10 +22,12 @@ dag = DAG(
 
 def print_hello():
     print('쿠버네티스 airflow')
+    return 0
 
 
 def print_hello2():
     print('쿠버네티스 airflow2')
+    return 0
 
 
 t1 = PythonOperator(
