@@ -21,7 +21,7 @@ dag = DAG(
 
 
 def print_hello():
-    print('쿠버네티스 airflow!!!!!!!!')
+    print('쿠버네티스 airflow!!')
     return 0
 
 
