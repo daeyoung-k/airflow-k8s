@@ -241,7 +241,7 @@ rbac:
 
 # Airflow executor
 # One of: LocalExecutor, LocalKubernetesExecutor, CeleryExecutor, KubernetesExecutor, CeleryKubernetesExecutor
-executor: "CeleryKubernetesExecutor"
+executor: "KubernetesExecutor"
 
 # If this is true and using LocalExecutor/KubernetesExecutor/CeleryKubernetesExecutor, the scheduler's
 # service account will have access to communicate with the api-server and launch pods.
@@ -365,11 +365,11 @@ data:
   # Otherwise pass connection values in
   metadataConnection:
     user: postgres
-    pass: postgres
+    pass: da24da24!!
     protocol: postgresql
-    host: ~
+    host: prod-rds-wm-data-analysis2.cluster-clawwqlx2ltb.ap-northeast-2.rds.amazonaws.com
     port: 5432
-    db: postgres
+    db: airflow
     sslmode: disable
   # resultBackendConnection defaults to the same database as metadataConnection
   resultBackendConnection: ~
@@ -1201,7 +1201,7 @@ webserver:
 
 # Airflow Triggerer Config
 triggerer:
-  enabled: true
+  enabled: false
   # Number of airflow triggerers in the deployment
   replicas: 1
   # Max number of old replicasets to retain
@@ -2003,7 +2003,7 @@ cleanup:
 # Configuration for postgresql subchart
 # Not recommended for production
 postgresql:
-  enabled: true
+  enabled: false
   image:
     tag: "11"
   auth:
